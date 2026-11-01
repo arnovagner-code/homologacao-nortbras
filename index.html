@@ -8,12 +8,12 @@
 </head>
 <body class="bg-slate-950 font-sans min-h-screen text-slate-100">
 
-  <!-- CABEÇALHO HERO: PREENCHE 100% DA LARGURA NO COMPUTADOR E NO CELULAR -->
+  <!-- CABEÇALHO HERO: 100% RESPONSIVO E SEM CORTES -->
   <header class="w-full bg-slate-900 border-b-4 border-amber-500 shadow-2xl overflow-hidden">
-    <!-- Imagem de Capa Panorâmica Full Width -->
-    <div class="w-full relative max-h-[420px] overflow-hidden flex items-center justify-center bg-slate-950">
-      <img src="logo.jpg" alt="Nortbras Energia" class="w-full h-full object-cover object-center block">
-      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
+    <!-- Imagem de Capa Ajustada para Computador e Telemóvel -->
+    <div class="w-full relative aspect-[21/9] sm:aspect-[3/1] max-h-[480px] overflow-hidden flex items-center justify-center bg-slate-950">
+      <img src="logo.jpg" alt="Nortbras Energia" class="w-full h-full object-contain sm:object-cover object-center block">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-70"></div>
     </div>
 
     <!-- Informações da Assessoria Realocadas Logo Abaixo da Capa -->
@@ -42,8 +42,8 @@
     <div class="bg-slate-900 rounded-2xl shadow-2xl p-5 sm:p-10 border border-slate-800/80">
       
       <div class="mb-8 pb-4 border-b border-slate-800">
-        <h2 class="text-xl sm:text-2xl font-bold text-white">Formulário de Envio de Projeto</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-1">Preencha os dados técnicos abaixo para dar início ao processo.</p>
+        <h2 class="text-xl sm:text-2xl font-bold text-white">Dados Técnicos do Projeto</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Preencha os dados abaixo para dar início ao processo de homologação e assessoria.</p>
       </div>
     
       <form id="formHomologacao" class="space-y-6">
@@ -111,7 +111,7 @@
           </h3>
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             <div>
-              <label class="block text-xs font-semibold text-slate-300">Ligação *</label>
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Ligação *</label>
               <select id="tipoFornecimento" class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-xs sm:text-sm">
                 <option>Monofásico</option>
                 <option>Bifásico</option>
@@ -119,7 +119,7 @@
               </select>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-300">Tensão *</label>
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Tensão *</label>
               <select id="tensao" class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-xs sm:text-sm">
                 <option>127V</option>
                 <option>220V</option>
@@ -127,11 +127,11 @@
               </select>
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-300">Disjuntor (A) *</label>
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Disjuntor (A) *</label>
               <input type="number" id="disjuntor" placeholder="Ex: 63" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-xs sm:text-sm">
             </div>
             <div>
-              <label class="block text-xs font-semibold text-slate-300">Carga (kW)</label>
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Carga (kW)</label>
               <input type="number" step="0.01" id="potencia" placeholder="Ex: 5.5" class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-xs sm:text-sm">
             </div>
           </div>
@@ -170,7 +170,7 @@
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-3">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Inversor (Marca/Modelo) *</label>
-              <input type="text" id="inversor" placeholder="Ex: Solplanet 8kW / Huawei / WEG" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+              <input type="text" id="inversor" placeholder="Ex: Solplanet / Huawei / WEG" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
             </div>
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Módulos (Qtde e Wp) *</label>
@@ -242,7 +242,7 @@
         </div>
 
         <button type="submit" id="btnEnviar" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-4 px-6 rounded-xl shadow-xl transition duration-200 text-base sm:text-lg tracking-wide uppercase active:scale-[0.98]">
-          Enviar Projeto para Homologação
+          Enviar Dados Técnicos do Projeto
         </button>
 
       </form>
@@ -309,14 +309,14 @@
           location.reload();
         } else {
           alert("Erro ao enviar o projeto. Tente novamente.");
-          btn.innerText = "Enviar Projeto para Homologação";
+          btn.innerText = "Enviar Dados Técnicos do Projeto";
           btn.disabled = false;
         }
       })
       .catch(error => {
         console.error('Erro:', error);
         alert("Erro de conexão ao enviar o formulário.");
-        btn.innerText = "Enviar Projeto para Homologação";
+        btn.innerText = "Enviar Dados Técnicos do Projeto";
         btn.disabled = false;
       });
     });
