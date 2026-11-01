@@ -6,52 +6,55 @@
   <title>Nortbras Energia - Assessoria e Homologação Solar</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-slate-950 font-sans min-h-screen text-slate-100 py-4 px-2 sm:px-4">
+<body class="bg-slate-950 font-sans min-h-screen text-slate-100">
 
-  <div class="max-w-3xl mx-auto">
-    
-    <!-- BANNER DA IMAGEM LIMPA (SEM NENHUM TEXTO POR CIMA) -->
-    <div class="w-full rounded-2xl overflow-hidden shadow-2xl border border-slate-800 bg-slate-900 mb-6">
-      <img src="logo.jpg" alt="Nortbras Energia" class="w-full h-auto object-cover block">
+  <!-- CABEÇALHO HERO: PREENCHE 100% DA LARGURA NO COMPUTADOR E NO CELULAR -->
+  <header class="w-full bg-slate-900 border-b-4 border-amber-500 shadow-2xl overflow-hidden">
+    <!-- Imagem de Capa Panorâmica Full Width -->
+    <div class="w-full relative max-h-[420px] overflow-hidden flex items-center justify-center bg-slate-950">
+      <img src="logo.jpg" alt="Nortbras Energia" class="w-full h-full object-cover object-center block">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
     </div>
 
-    <!-- INFORMAÇÕES REALOCADAS ABAIXO DA IMAGEM -->
-    <div class="text-center mb-8 px-2">
-      <h1 class="text-xl sm:text-2xl font-black text-amber-400 uppercase tracking-wide">
+    <!-- Informações da Assessoria Realocadas Logo Abaixo da Capa -->
+    <div class="max-w-5xl mx-auto text-center py-6 px-4">
+      <h1 class="text-xl sm:text-3xl font-black text-amber-400 uppercase tracking-wider drop-shadow-md">
         Assessoria Técnica Completa & Homologação Solar
       </h1>
-      <p class="text-slate-400 text-xs sm:text-sm mt-1">
-        Projetos, suporte técnico, pós-venda, garantias e emissão de laudos para seguro.
+      <p class="text-slate-300 text-xs sm:text-base mt-2 max-w-2xl mx-auto font-medium">
+        Projetos, suporte técnico na instalação, auxílio em compras, pós-venda, garantia e laudos para seguro.
       </p>
 
-      <!-- Selos de Serviços para Mobile -->
-      <div class="mt-4 flex flex-wrap justify-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs font-medium text-slate-300">
-        <span class="bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full">Homologação Express</span>
-        <span class="bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full">Elaboração de Projetos</span>
-        <span class="bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full">Auxílio em Compras</span>
-        <span class="bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full">Suporte na Instalação</span>
-        <span class="bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full">Pós-Venda & Garantia</span>
-        <span class="bg-blue-950/80 border border-blue-700/50 px-2.5 py-1 rounded-full">Laudos para Seguro</span>
+      <!-- Selos de Serviços Destacados -->
+      <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-200">
+        <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Homologação Express</span>
+        <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Elaboração de Projetos</span>
+        <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Auxílio em Compras</span>
+        <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Suporte na Instalação</span>
+        <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Pós-Venda & Garantia</span>
+        <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Laudos para Seguro</span>
       </div>
     </div>
+  </header>
 
-    <!-- FORMULÁRIO COM DESIGN PROFISSIONAL & FOCADO EM MOBILE -->
-    <div class="bg-slate-900 rounded-2xl shadow-2xl p-4 sm:p-8 border border-slate-800">
+  <!-- ÁREA PRINCIPAL DO FORMULÁRIO -->
+  <main class="max-w-4xl mx-auto px-3 sm:px-6 py-8">
+    <div class="bg-slate-900 rounded-2xl shadow-2xl p-5 sm:p-10 border border-slate-800/80">
       
-      <div class="mb-6 pb-4 border-b border-slate-800">
-        <h2 class="text-xl sm:text-2xl font-bold text-white">Envio de Projeto para Homologação</h2>
-        <p class="text-slate-400 text-xs sm:text-sm mt-1">Preencha os dados técnicos abaixo diretamente pelo smartphone.</p>
+      <div class="mb-8 pb-4 border-b border-slate-800">
+        <h2 class="text-xl sm:text-2xl font-bold text-white">Formulário de Envio de Projeto</h2>
+        <p class="text-slate-400 text-xs sm:text-sm mt-1">Preencha os dados técnicos abaixo para dar início ao processo.</p>
       </div>
     
-      <form id="formHomologacao" class="space-y-5">
+      <form id="formHomologacao" class="space-y-6">
         
         <!-- 1. Dados do Titular -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
-          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
+          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">1</span> 
             Dados do Titular / Cliente
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Tipo de Pessoa</label>
               <select id="tipoPessoa" class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
@@ -79,12 +82,12 @@
         </div>
 
         <!-- 2. Localização -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
-          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
+          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">2</span> 
             Localização do Projeto
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">CEP *</label>
               <input type="text" id="cep" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
@@ -101,12 +104,12 @@
         </div>
 
         <!-- 3. Dados da UC -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
-          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
+          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">3</span> 
             Dados da Unidade Consumidora (UC)
           </h3>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             <div>
               <label class="block text-xs font-semibold text-slate-300">Ligação *</label>
               <select id="tipoFornecimento" class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-xs sm:text-sm">
@@ -135,7 +138,7 @@
         </div>
 
         <!-- 4. Geração Compartilhada -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
           <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-2 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">4</span> 
             Geração Compartilhada
@@ -148,7 +151,7 @@
 
           <div id="blocoBeneficiarias" class="hidden space-y-3 mt-3 pt-3 border-t border-slate-800">
             <div>
-              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Unidades e Percentuais de Divisão</label>
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Unidades e Divisão de Percentuais</label>
               <textarea id="detalhesBeneficiarias" rows="2" placeholder="Ex: UC 123456 (50%), UC 789012 (50%)" class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm"></textarea>
             </div>
             <div>
@@ -159,15 +162,15 @@
         </div>
 
         <!-- 5. Equipamentos -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
-          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
+          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">5</span> 
             Equipamentos do Sistema Solar *
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-3">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-3">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Inversor (Marca/Modelo) *</label>
-              <input type="text" id="inversor" placeholder="Ex: Deye 8kW" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+              <input type="text" id="inversor" placeholder="Ex: Solplanet 8kW / Huawei / WEG" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
             </div>
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Módulos (Qtde e Wp) *</label>
@@ -184,13 +187,13 @@
           </div>
         </div>
 
-        <!-- 6. Documentação e Aviso da Procuração -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
-          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+        <!-- 6. Documentação Obrigatória & Aviso de Procuração -->
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
+          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">6</span> 
             Documentação Obrigatória (PDF ou Foto)
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Fatura de Energia *</label>
               <input type="file" id="faturaEnergia" accept="image/*,.pdf" required class="w-full mt-1 p-2 text-xs text-slate-300 border border-slate-700 rounded-xl bg-slate-900 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-slate-950">
@@ -200,25 +203,25 @@
               <input type="file" id="docTitular" accept="image/*,.pdf" required class="w-full mt-1 p-2 text-xs text-slate-300 border border-slate-700 rounded-xl bg-slate-900 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-slate-950">
             </div>
             
-            <!-- AVISO PROCURAÇÃO DESTACADO -->
-            <div class="sm:col-span-2 bg-blue-950/60 border-l-4 border-amber-500 p-3 sm:p-4 rounded-r-xl mt-2">
-              <h4 class="text-xs sm:text-sm font-bold text-amber-400 flex items-center gap-1.5">
+            <!-- AVISO DA PROCURAÇÃO AUTOMÁTICA -->
+            <div class="sm:col-span-2 bg-blue-950/80 border-l-4 border-amber-500 p-4 rounded-r-xl mt-2">
+              <h4 class="text-xs sm:text-sm font-bold text-amber-400 flex items-center gap-2">
                 📲 Envio Automático da Procuração via WhatsApp
               </h4>
               <p class="text-xs text-slate-300 mt-1 leading-relaxed">
-                A procuração personalizada será gerada automaticamente e enviada para o <strong>WhatsApp do cliente / responsável</strong>. O documento precisa ser assinado e reconhecido firma em cartório ou assinado digitalmente via <strong>GOV.BR</strong>.
+                A procuração será gerada automaticamente e enviada para o <strong>WhatsApp do cliente / responsável</strong>. O documento deverá ser assinado e reconhecido firma em cartório ou assinado digitalmente via <strong>GOV.BR</strong>.
               </p>
             </div>
           </div>
         </div>
 
         <!-- 7. Fotos de Campo -->
-        <div class="p-4 sm:p-5 bg-slate-950/70 rounded-xl border border-slate-800">
-          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-3 flex items-center gap-2">
+        <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
+          <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">7</span> 
-            Fotos de Campo Obrigatórias (Câmera do Telemóvel)
+            Fotos de Campo Obrigatórias
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Foto do Padrão de Entrada *</label>
               <input type="file" id="fotoPadrao" accept="image/*" required class="w-full mt-1 p-2 text-xs text-slate-300 border border-slate-700 rounded-xl bg-slate-900 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-slate-950">
@@ -238,13 +241,13 @@
           </div>
         </div>
 
-        <button type="submit" id="btnEnviar" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-4 px-6 rounded-xl shadow-xl transition duration-200 text-base sm:text-lg tracking-wide uppercase active:scale-95">
+        <button type="submit" id="btnEnviar" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-black py-4 px-6 rounded-xl shadow-xl transition duration-200 text-base sm:text-lg tracking-wide uppercase active:scale-[0.98]">
           Enviar Projeto para Homologação
         </button>
 
       </form>
     </div>
-  </div>
+  </main>
 
   <script>
     function toggleBeneficiarias() {
