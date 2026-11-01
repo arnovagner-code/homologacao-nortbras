@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nortbras Energia - Envio de Homologação</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <div class="max-w-4xl mx-auto my-10 p-8 bg-white rounded-xl shadow-md">
+    <div class="text-center mb-8">
+      <h1 class="text-3xl font-bold text-blue-800">Nortbras Energia</h1>
+      <p class="text-gray-600 mt-2">Sistema de Envio de Documentos para Homologação de Projetos Solares</p>
+    </div>
+    
+    <form id="formHomologacao" class="space-y-6">
+      
+      <!-- 1. Dados do Titular -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-4">1. Dados do Titular / Cliente</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Tipo de Pessoa</label>
+            <select id="tipoPessoa" class="w-full mt-1 p-2 border rounded-md bg-white">
+              <option value="PF">Pessoa Física</option>
+              <option value="PJ">Pessoa Jurídica</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Nome Completo / Razão Social *</label>
+            <input type="text" id="nomeTitular" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">CPF / CNPJ *</label>
+            <input type="text" id="cpfCnpj" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Telefone de Contato (WhatsApp) *</label>
+            <input type="tel" id="telefone" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">E-mail *</label>
+            <input type="email" id="email" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Localização -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-4">2. Localização do Projeto</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">CEP *</label>
+            <input type="text" id="cep" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Concessionária de Energia *</label>
+            <input type="text" id="concessionaria" placeholder="Ex: Equatorial, Enel..." required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700">Link da Localização no Google Maps (ou Coordenadas) *</label>
+            <input type="url" id="mapsLink" placeholder="https://maps.google.com/..." required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Dados da UC -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-4">3. Dados da Unidade Consumidora (UC)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Tipo de Fornecimento *</label>
+            <select id="tipoFornecimento" class="w-full mt-1 p-2 border rounded-md bg-white">
+              <option>Monofásico</option>
+              <option>Bifásico</option>
+              <option>Trifásico</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Tensão (V) *</label>
+            <select id="tensao" class="w-full mt-1 p-2 border rounded-md bg-white">
+              <option>127V</option>
+              <option>220V</option>
+              <option>380V</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Disjuntor de Entrada (A) *</label>
+            <input type="number" id="disjuntor" placeholder="Ex: 63" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Potência / Carga (kW) (Opc.)</label>
+            <input type="number" step="0.01" id="potencia" placeholder="Ex: 5.5" class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Geração Compartilhada -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-2">4. Geração Compartilhada</h3>
+        <label class="block text-sm font-medium text-gray-700 mb-2">Haverá unidades beneficiárias?</label>
+        <select id="possuiBeneficiarias" class="w-full md:w-1/4 p-2 border rounded-md bg-white mb-4" onchange="toggleBeneficiarias()">
+          <option value="nao">Não</option>
+          <option value="sim">Sim</option>
+        </select>
+
+        <div id="blocoBeneficiarias" class="hidden space-y-3 mt-3 pt-3 border-t">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Quais as unidades e como será a divisão?</label>
+            <textarea id="detalhesBeneficiarias" rows="3" placeholder="Ex: UC 123456 (50%), UC 789012 (50%)" class="w-full mt-1 p-2 border rounded-md bg-white"></textarea>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Faturas das Unidades Beneficiárias (PDF ou Fotos)</label>
+            <input type="file" id="faturasBeneficiarias" multiple accept="image/*,.pdf" class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Documentação Obrigatória -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-4">5. Documentação Obrigatória (PDF ou Foto Legível)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Fatura de Energia *</label>
+            <input type="file" id="faturaEnergia" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Documento do Titular (RG/CNH/Contrato Social) *</label>
+            <input type="file" id="docTitular" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div class="md:col-span-2">
+            <label class="block text-sm font-medium text-gray-700">Procuração Assinada (PDF) *</label>
+            <input type="file" id="procuracao" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Fotos de Campo Obrigatórias -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-4">6. Fotos de Campo Obrigatórias (JPEG/PNG)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Fotos do Padrão de Entrada *</label>
+            <input type="file" id="fotoPadrao" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Fotos da Fachada *</label>
+            <input type="file" id="fotoFachada" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Fotos da Medição (Relógio/Medidor) *</label>
+            <input type="file" id="fotoMedicao" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700">Fotos do Disjuntor *</label>
+            <input type="file" id="fotoDisjuntor" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Documentos Complementares -->
+      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
+        <h3 class="text-lg font-semibold text-blue-600 mb-4">7. Documentos Complementares (Opcional)</h3>
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Lista de Equipamentos</label>
+          <input type="file" id="listaEquipamentos" accept="image/*,.pdf" class="w-full mt-1 p-2 border rounded-md bg-white">
+        </div>
+      </div>
+
+      <button type="submit" id="btnEnviar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition duration-200">
+        Enviar Projeto para Homologação
+      </button>
+
+    </form>
+  </div>
+
+  <script>
+    function toggleBeneficiarias() {
+      const select = document.getElementById('possuiBeneficiarias').value;
+      const bloco = document.getElementById('blocoBeneficiarias');
+      if (select === 'sim') {
+        bloco.classList.remove('hidden');
+      } else {
+        bloco.classList.add('hidden');
+      }
+    }
+
+    document.getElementById('formHomologacao').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const btn = document.getElementById('btnEnviar');
+      btn.innerText = "A enviar dados...";
+      btn.disabled = true;
+
+      // URL do Webhook do n8n ou Make (O programador colocará aqui a URL gerada)
+      const WEBHOOK_URL = "SUA_URL_DE_WEBHOOK_AQUI";
+
+      const formData = new FormData();
+      formData.append("tipoPessoa", document.getElementById('tipoPessoa').value);
+      formData.append("nomeTitular", document.getElementById('nomeTitular').value);
+      formData.append("cpfCnpj", document.getElementById('cpfCnpj').value);
+      formData.append("telefone", document.getElementById('telefone').value);
+      formData.append("email", document.getElementById('email').value);
+      formData.append("cep", document.getElementById('cep').value);
+      formData.append("concessionaria", document.getElementById('concessionaria').value);
+      formData.append("mapsLink", document.getElementById('mapsLink').value);
+      formData.append("tipoFornecimento", document.getElementById('tipoFornecimento').value);
+      formData.append("tensao", document.getElementById('tensao').value);
+      formData.append("disjuntor", document.getElementById('disjuntor').value);
+      formData.append("potencia", document.getElementById('potencia').value);
+      
+      // Anexando ficheiros principais
+      formData.append("faturaEnergia", document.getElementById('faturaEnergia').files[0]);
+      formData.append("docTitular", document.getElementById('docTitular').files[0]);
+      formData.append("procuracao", document.getElementById('procuracao').files[0]);
+      formData.append("fotoPadrao", document.getElementById('fotoPadrao').files[0]);
+      formData.append("fotoFachada", document.getElementById('fotoFachada').files[0]);
+      formData.append("fotoMedicao", document.getElementById('fotoMedicao').files[0]);
+      formData.append("fotoDisjuntor", document.getElementById('fotoDisjuntor').files[0]);
+
+      // Opcionais
+      const listaEquip = document.getElementById('listaEquipamentos').files[0];
+      if(listaEquip) formData.append("listaEquipamentos", listaEquip);
+
+      // Envio via Fetch para o Webhook
+      fetch(WEBHOOK_URL, {
+        method: 'POST',
+        body: formData
+      })
+      .then(response => {
+        if(response.ok) {
+          alert("Projeto enviado com sucesso!");
+          location.reload();
+        } else {
+          alert("Erro ao enviar o projeto. Tente novamente.");
+          btn.innerText = "Enviar Projeto para Homologação";
+          btn.disabled = false;
+        }
+      })
+      .catch(error => {
+        console.error('Erro:', error);
+        alert("Erro de conexão ao enviar o formulário.");
+        btn.innerText = "Enviar Projeto para Homologação";
+        btn.disabled = false;
+      });
+    });
+  </script>
+</body>
+</html>
