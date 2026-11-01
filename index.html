@@ -3,178 +3,244 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nortbras Energia - Envio de Homologação</title>
+  <title>Nortbras Energia - Assessoria e Homologação Solar</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-100 font-sans">
+<body class="bg-slate-900 font-sans min-h-screen text-slate-800">
 
-  <div class="max-w-4xl mx-auto my-10 p-8 bg-white rounded-xl shadow-md">
-    <div class="text-center mb-8">
-      <!-- Logo da Nortbras Energia (certifique-se de que o arquivo da imagem no GitHub se chama logo.jpg ou altere aqui o nome) -->
-      <img src="logo.jpg" alt="Nortbras Energia Logo" class="mx-auto h-24 mb-4 object-contain">
-      <h1 class="text-3xl font-bold text-blue-800">Nortbras Energia</h1>
-      <p class="text-gray-600 mt-2">Sistema de Envio de Documentos para Homologação de Projetos Solares</p>
+  <!-- CAPA IMPACTANTE (HERO BANNER) -->
+  <div class="relative w-full bg-slate-900 border-b-4 border-amber-500 overflow-hidden shadow-2xl">
+    <!-- Imagem de Fundo de Alta Qualidade -->
+    <div class="absolute inset-0 z-0">
+      <img src="logo.jpg" alt="Nortbras Energia Banner" class="w-full h-full object-cover opacity-60 filter brightness-90">
+      <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent"></div>
     </div>
-    
-    <form id="formHomologacao" class="space-y-6">
+
+    <!-- Conteúdo em Destaque na Capa -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 py-16 text-center">
+      <h1 class="text-4xl md:text-6xl font-black text-white tracking-wider drop-shadow-lg uppercase">
+        Nortbras <span class="text-amber-400">Energia</span>
+      </h1>
+      <p class="text-xl md:text-2xl font-bold text-blue-300 mt-3 drop-shadow-md">
+        Assessoria Técnica Completa & Homologação Solar
+      </p>
       
-      <!-- 1. Dados do Titular -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-4">1. Dados do Titular / Cliente</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Tipo de Pessoa</label>
-            <select id="tipoPessoa" class="w-full mt-1 p-2 border rounded-md bg-white">
-              <option value="PF">Pessoa Física</option>
-              <option value="PJ">Pessoa Jurídica</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Nome Completo / Razão Social *</label>
-            <input type="text" id="nomeTitular" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">CPF / CNPJ *</label>
-            <input type="text" id="cpfCnpj" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Telefone de Contato (WhatsApp) *</label>
-            <input type="tel" id="telefone" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">E-mail *</label>
-            <input type="email" id="email" required class="w-full mt-1 p-2 border rounded-md bg-white">
+      <!-- Badges de Serviços -->
+      <div class="mt-6 flex flex-wrap justify-center gap-2 text-xs md:text-sm font-semibold text-slate-200">
+        <span class="bg-blue-900/80 backdrop-blur-md border border-blue-400/30 px-3 py-1 rounded-full">Homologação Express</span>
+        <span class="bg-blue-900/80 backdrop-blur-md border border-blue-400/30 px-3 py-1 rounded-full">Elaboração de Projetos</span>
+        <span class="bg-blue-900/80 backdrop-blur-md border border-blue-400/30 px-3 py-1 rounded-full">Auxílio na Compra de Materiais</span>
+        <span class="bg-blue-900/80 backdrop-blur-md border border-blue-400/30 px-3 py-1 rounded-full">Suporte de Instalação</span>
+        <span class="bg-blue-900/80 backdrop-blur-md border border-blue-400/30 px-3 py-1 rounded-full">Pós-Venda & Garantia</span>
+        <span class="bg-blue-900/80 backdrop-blur-md border border-blue-400/30 px-3 py-1 rounded-full">Laudos para Seguro</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTAINER DO FORMULÁRIO -->
+  <div class="max-w-4xl mx-auto px-4 -mt-8 relative z-20 pb-16">
+    <div class="bg-white rounded-2xl shadow-2xl p-6 md:p-10 border border-slate-100">
+      
+      <div class="mb-8 pb-4 border-b border-slate-200">
+        <h2 class="text-2xl font-bold text-slate-900">Envio de Projeto para Homologação</h2>
+        <p class="text-slate-500 text-sm mt-1">Preencha os dados e anexe a documentação necessária do cliente.</p>
+      </div>
+    
+      <form id="formHomologacao" class="space-y-6">
+        
+        <!-- 1. Dados do Titular -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">1</span> 
+            Dados do Titular / Cliente
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Tipo de Pessoa</label>
+              <select id="tipoPessoa" class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+                <option value="PF">Pessoa Física</option>
+                <option value="PJ">Pessoa Jurídica</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Nome Completo / Razão Social *</label>
+              <input type="text" id="nomeTitular" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">CPF / CNPJ *</label>
+              <input type="text" id="cpfCnpj" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Telefone de Contato (WhatsApp) *</label>
+              <input type="tel" id="telefone" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">E-mail *</label>
+              <input type="email" id="email" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 2. Localização -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-4">2. Localização do Projeto</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">CEP *</label>
-            <input type="text" id="cep" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Concessionária de Energia *</label>
-            <input type="text" id="concessionaria" placeholder="Ex: Equatorial, Enel..." required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-700">Link da Localização no Google Maps (ou Coordenadas) *</label>
-            <input type="url" id="mapsLink" placeholder="https://maps.google.com/..." required class="w-full mt-1 p-2 border rounded-md bg-white">
+        <!-- 2. Localização -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">2</span> 
+            Localização do Projeto
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">CEP *</label>
+              <input type="text" id="cep" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Concessionária de Energia *</label>
+              <input type="text" id="concessionaria" placeholder="Ex: Equatorial, Enel..." required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-semibold text-gray-700">Link da Localização no Google Maps (ou Coordenadas) *</label>
+              <input type="url" id="mapsLink" placeholder="https://maps.google.com/..." required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 3. Dados da UC -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-4">3. Dados da Unidade Consumidora (UC)</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Tipo de Fornecimento *</label>
-            <select id="tipoFornecimento" class="w-full mt-1 p-2 border rounded-md bg-white">
-              <option>Monofásico</option>
-              <option>Bifásico</option>
-              <option>Trifásico</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Tensão (V) *</label>
-            <select id="tensao" class="w-full mt-1 p-2 border rounded-md bg-white">
-              <option>127V</option>
-              <option>220V</option>
-              <option>380V</option>
-            </select>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Disjuntor de Entrada (A) *</label>
-            <input type="number" id="disjuntor" placeholder="Ex: 63" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Potência / Carga (kW) (Opc.)</label>
-            <input type="number" step="0.01" id="potencia" placeholder="Ex: 5.5" class="w-full mt-1 p-2 border rounded-md bg-white">
+        <!-- 3. Dados da UC -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">3</span> 
+            Dados da Unidade Consumidora (UC)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Tipo de Fornecimento *</label>
+              <select id="tipoFornecimento" class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+                <option>Monofásico</option>
+                <option>Bifásico</option>
+                <option>Trifásico</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Tensão (V) *</label>
+              <select id="tensao" class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+                <option>127V</option>
+                <option>220V</option>
+                <option>380V</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Disjuntor de Entrada (A) *</label>
+              <input type="number" id="disjuntor" placeholder="Ex: 63" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Potência / Carga (kW)</label>
+              <input type="number" step="0.01" id="potencia" placeholder="Ex: 5.5" class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 4. Geração Compartilhada -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-2">4. Geração Compartilhada</h3>
-        <label class="block text-sm font-medium text-gray-700 mb-2">Haverá unidades beneficiárias?</label>
-        <select id="possuiBeneficiarias" class="w-full md:w-1/4 p-2 border rounded-md bg-white mb-4" onchange="toggleBeneficiarias()">
-          <option value="nao">Não</option>
-          <option value="sim">Sim</option>
-        </select>
+        <!-- 4. Geração Compartilhada -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-2 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">4</span> 
+            Geração Compartilhada
+          </h3>
+          <label class="block text-sm font-semibold text-gray-700 mb-2">Haverá unidades beneficiárias?</label>
+          <select id="possuiBeneficiarias" class="w-full md:w-1/4 p-2.5 border rounded-lg bg-white mb-4 focus:ring-2 focus:ring-blue-500 outline-none" onchange="toggleBeneficiarias()">
+            <option value="nao">Não</option>
+            <option value="sim">Sim</option>
+          </select>
 
-        <div id="blocoBeneficiarias" class="hidden space-y-3 mt-3 pt-3 border-t">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Quais as unidades e como será a divisão?</label>
-            <textarea id="detalhesBeneficiarias" rows="3" placeholder="Ex: UC 123456 (50%), UC 789012 (50%)" class="w-full mt-1 p-2 border rounded-md bg-white"></textarea>
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Faturas das Unidades Beneficiárias (PDF ou Fotos)</label>
-            <input type="file" id="faturasBeneficiarias" multiple accept="image/*,.pdf" class="w-full mt-1 p-2 border rounded-md bg-white">
+          <div id="blocoBeneficiarias" class="hidden space-y-3 mt-3 pt-3 border-t border-gray-200">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Quais as unidades e como será a divisão?</label>
+              <textarea id="detalhesBeneficiarias" rows="3" placeholder="Ex: UC 123456 (50%), UC 789012 (50%)" class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none"></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Faturas das Unidades Beneficiárias (PDF ou Fotos)</label>
+              <input type="file" id="faturasBeneficiarias" multiple accept="image/*,.pdf" class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 5. Documentação Obrigatória -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-4">5. Documentação Obrigatória (PDF ou Foto Legível)</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Fatura de Energia *</label>
-            <input type="file" id="faturaEnergia" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-md bg-white">
+        <!-- 5. Equipamentos do Sistema -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">5</span> 
+            Equipamentos do Sistema Solar *
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Marca/Modelo do Inversor *</label>
+              <input type="text" id="inversor" placeholder="Ex: Deye 8kW / Growatt" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Qtde e Potência dos Módulos *</label>
+              <input type="text" id="modulos" placeholder="Ex: 14x 550W Canadian" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Potência Total do Gerador (kWp) *</label>
+              <input type="number" step="0.01" id="potenciaGerador" placeholder="Ex: 7.7" required class="w-full mt-1 p-2.5 border rounded-lg bg-white focus:ring-2 focus:ring-blue-500 outline-none">
+            </div>
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700">Documento do Titular (RG/CNH/Contrato Social) *</label>
-            <input type="file" id="docTitular" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-700">Procuração Assinada (PDF) *</label>
-            <input type="file" id="procuracao" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-md bg-white">
+            <label class="block text-sm font-semibold text-gray-700">Anexar Datasheet / Lista de Equipamentos (Opcional)</label>
+            <input type="file" id="listaEquipamentos" accept="image/*,.pdf" class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
           </div>
         </div>
-      </div>
 
-      <!-- 6. Fotos de Campo Obrigatórias -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-4">6. Fotos de Campo Obrigatórias (JPEG/PNG)</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Fotos do Padrão de Entrada *</label>
-            <input type="file" id="fotoPadrao" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Fotos da Fachada *</label>
-            <input type="file" id="fotoFachada" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Fotos da Medição (Relógio/Medidor) *</label>
-            <input type="file" id="fotoMedicao" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700">Fotos do Disjuntor *</label>
-            <input type="file" id="fotoDisjuntor" accept="image/*" required class="w-full mt-1 p-2 border rounded-md bg-white">
+        <!-- 6. Documentação Obrigatória -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">6</span> 
+            Documentação Obrigatória (PDF ou Foto Legível)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Fatura de Energia *</label>
+              <input type="file" id="faturaEnergia" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Documento do Titular (RG/CNH/Contrato Social) *</label>
+              <input type="file" id="docTitular" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+            <div class="md:col-span-2">
+              <label class="block text-sm font-semibold text-gray-700">Procuração Assinada (PDF) *</label>
+              <input type="file" id="procuracao" accept="image/*,.pdf" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- 7. Documentos Complementares -->
-      <div class="p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h3 class="text-lg font-semibold text-blue-600 mb-4">7. Documentos Complementares (Opcional)</h3>
-        <div>
-          <label class="block text-sm font-medium text-gray-700">Lista de Equipamentos</label>
-          <input type="file" id="listaEquipamentos" accept="image/*,.pdf" class="w-full mt-1 p-2 border rounded-md bg-white">
+        <!-- 7. Fotos de Campo Obrigatórias -->
+        <div class="p-5 bg-slate-50 rounded-xl border border-slate-200/60 shadow-sm">
+          <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center gap-2">
+            <span class="bg-blue-700 text-white w-7 h-7 rounded-full inline-flex items-center justify-center text-sm">7</span> 
+            Fotos de Campo Obrigatórias (JPEG/PNG)
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Fotos do Padrão de Entrada *</label>
+              <input type="file" id="fotoPadrao" accept="image/*" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Fotos da Fachada *</label>
+              <input type="file" id="fotoFachada" accept="image/*" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Fotos da Medição (Relógio/Medidor) *</label>
+              <input type="file" id="fotoMedicao" accept="image/*" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-gray-700">Fotos do Disjuntor *</label>
+              <input type="file" id="fotoDisjuntor" accept="image/*" required class="w-full mt-1 p-2 border rounded-lg bg-white file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100">
+            </div>
+          </div>
         </div>
-      </div>
 
-      <button type="submit" id="btnEnviar" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-md transition duration-200">
-        Enviar Projeto para Homologação
-      </button>
+        <button type="submit" id="btnEnviar" class="w-full bg-amber-500 hover:bg-amber-600 text-slate-950 font-black py-4 px-6 rounded-xl shadow-xl transition duration-200 text-xl tracking-wide uppercase">
+          Enviar Projeto para Homologação
+        </button>
 
-    </form>
+      </form>
+    </div>
   </div>
 
   <script>
@@ -211,6 +277,12 @@
       formData.append("disjuntor", document.getElementById('disjuntor').value);
       formData.append("potencia", document.getElementById('potencia').value);
       
+      // Equipamentos
+      formData.append("inversor", document.getElementById('inversor').value);
+      formData.append("modulos", document.getElementById('modulos').value);
+      formData.append("potenciaGerador", document.getElementById('potenciaGerador').value);
+
+      // Ficheiros
       formData.append("faturaEnergia", document.getElementById('faturaEnergia').files[0]);
       formData.append("docTitular", document.getElementById('docTitular').files[0]);
       formData.append("procuracao", document.getElementById('procuracao').files[0]);
