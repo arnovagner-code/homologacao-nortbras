@@ -193,7 +193,6 @@
       btn.innerText = "A enviar dados...";
       btn.disabled = true;
 
-      // URL do Webhook do n8n ou Make (O programador colocará aqui a URL gerada)
       const WEBHOOK_URL = "SUA_URL_DE_WEBHOOK_AQUI";
 
       const formData = new FormData();
@@ -210,7 +209,6 @@
       formData.append("disjuntor", document.getElementById('disjuntor').value);
       formData.append("potencia", document.getElementById('potencia').value);
       
-      // Anexando ficheiros principais
       formData.append("faturaEnergia", document.getElementById('faturaEnergia').files[0]);
       formData.append("docTitular", document.getElementById('docTitular').files[0]);
       formData.append("procuracao", document.getElementById('procuracao').files[0]);
@@ -219,11 +217,9 @@
       formData.append("fotoMedicao", document.getElementById('fotoMedicao').files[0]);
       formData.append("fotoDisjuntor", document.getElementById('fotoDisjuntor').files[0]);
 
-      // Opcionais
       const listaEquip = document.getElementById('listaEquipamentos').files[0];
       if(listaEquip) formData.append("listaEquipamentos", listaEquip);
 
-      // Envio via Fetch para o Webhook
       fetch(WEBHOOK_URL, {
         method: 'POST',
         body: formData
