@@ -8,15 +8,13 @@
 </head>
 <body class="bg-slate-950 font-sans min-h-screen text-slate-100">
 
-  <!-- CABEÇALHO HERO: 100% RESPONSIVO E SEM CORTES -->
+  <!-- CABEÇALHO HERO -->
   <header class="w-full bg-slate-900 border-b-4 border-amber-500 shadow-2xl overflow-hidden">
-    <!-- Imagem de Capa Ajustada para Telemóvel (object-cover para preencher perfeitamente) -->
     <div class="w-full relative aspect-[21/9] sm:aspect-[3/1] max-h-[480px] overflow-hidden flex items-center justify-center bg-slate-950">
       <img src="logo.jpg" alt="Nortbras Energia" class="w-full h-full object-cover object-center block">
       <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-70"></div>
     </div>
 
-    <!-- Informações da Assessoria Realocadas Logo Abaixo da Capa -->
     <div class="max-w-5xl mx-auto text-center py-6 px-4">
       <h1 class="text-xl sm:text-3xl font-black text-amber-400 uppercase tracking-wider drop-shadow-md">
         Assessoria Técnica Completa & Homologação Solar
@@ -25,7 +23,6 @@
         Projetos, suporte técnico na instalação, auxílio em compras, pós-venda, garantia e laudos para seguro.
       </p>
 
-      <!-- Selos de Serviços Destacados -->
       <div class="mt-4 flex flex-wrap justify-center gap-2 text-xs sm:text-sm font-semibold text-slate-200">
         <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Homologação Express</span>
         <span class="bg-blue-950/90 border border-amber-500/40 px-3.5 py-1.5 rounded-full shadow-sm">Elaboração de Projetos</span>
@@ -161,33 +158,37 @@
           </div>
         </div>
 
-        <!-- 5. Equipamentos -->
+        <!-- 5. Equipamentos do Sistema Solar (Atualizado conforme solicitado) -->
         <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
           <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">5</span> 
-            Equipamentos do Sistema Solar *
+            Equipamentos do Kit Solar *
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4 mb-3">
+          <div class="grid grid-cols-1 sm:grid-cols-4 gap-3 sm:gap-4 mb-3">
             <div>
               <label class="block text-xs sm:text-sm font-semibold text-slate-300">Inversor (Marca/Modelo) *</label>
-              <input type="text" id="inversor" placeholder="Ex: Solplanet / Huawei / WEG" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+              <input type="text" id="inversor" placeholder="Ex: Solplanet / Huawei" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
             </div>
             <div>
-              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Módulos (Qtde e Wp) *</label>
-              <input type="text" id="modulos" placeholder="Ex: 14x 550W" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Marca dos Módulos *</label>
+              <input type="text" id="marcaModulos" placeholder="Ex: Canadian / JA Solar" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
             </div>
             <div>
-              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Potência Total (kWp) *</label>
-              <input type="number" step="0.01" id="potenciaGerador" placeholder="Ex: 7.7" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Quantidade de Módulos *</label>
+              <input type="number" id="qtdModulos" placeholder="Ex: 14" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
+            </div>
+            <div>
+              <label class="block text-xs sm:text-sm font-semibold text-slate-300">Potência do Módulo (W) *</label>
+              <input type="number" id="potenciaModulo" placeholder="Ex: 550" required class="w-full mt-1 p-3 border border-slate-700 rounded-xl bg-slate-900 text-white focus:ring-2 focus:ring-amber-500 outline-none text-sm">
             </div>
           </div>
           <div>
-            <label class="block text-xs sm:text-sm font-semibold text-slate-300">Datasheet / Lista de Equipamentos (Opcional)</label>
+            <label class="block text-xs sm:text-sm font-semibold text-slate-300">Lista de Equipamentos / Composição do Kit (Opcional)</label>
             <input type="file" id="listaEquipamentos" accept="image/*,.pdf" class="w-full mt-1 p-2 text-xs text-slate-300 border border-slate-700 rounded-xl bg-slate-900 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-slate-950">
           </div>
         </div>
 
-        <!-- 6. Documentação Obrigatória & Aviso de Procuração -->
+        <!-- 6. Documentação Obrigatória -->
         <div class="p-4 sm:p-6 bg-slate-950/80 rounded-xl border border-slate-800 shadow-inner">
           <h3 class="text-base sm:text-lg font-bold text-amber-400 mb-4 flex items-center gap-2">
             <span class="bg-amber-500 text-slate-950 w-6 h-6 rounded-full inline-flex items-center justify-center text-xs font-black">6</span> 
@@ -203,7 +204,6 @@
               <input type="file" id="docTitular" accept="image/*,.pdf" required class="w-full mt-1 p-2 text-xs text-slate-300 border border-slate-700 rounded-xl bg-slate-900 file:mr-3 file:py-2 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-semibold file:bg-amber-500 file:text-slate-950">
             </div>
             
-            <!-- AVISO DA PROCURAÇÃO AUTOMÁTICA -->
             <div class="sm:col-span-2 bg-blue-950/80 border-l-4 border-amber-500 p-4 rounded-r-xl mt-2">
               <h4 class="text-xs sm:text-sm font-bold text-amber-400 flex items-center gap-2">
                 📲 Envio Automático da Procuração via WhatsApp
@@ -264,6 +264,7 @@
       e.preventDefault();
       
       const btn = document.getElementById('btnEnviar');
+      if (btn.disabled) return; // Trava duplo clique
       btn.innerText = "A enviar dados...";
       btn.disabled = true;
 
@@ -283,10 +284,11 @@
       formData.append("disjuntor", document.getElementById('disjuntor').value);
       formData.append("potencia", document.getElementById('potencia').value);
       
-      // Equipamentos
+      // Equipamentos atualizados
       formData.append("inversor", document.getElementById('inversor').value);
-      formData.append("modulos", document.getElementById('modulos').value);
-      formData.append("potenciaGerador", document.getElementById('potenciaGerador').value);
+      formData.append("marcaModulos", document.getElementById('marcaModulos').value);
+      formData.append("qtdModulos", document.getElementById('qtdModulos').value);
+      formData.append("potenciaModulo", document.getElementById('potenciaModulo').value);
 
       // Ficheiros
       formData.append("faturaEnergia", document.getElementById('faturaEnergia').files[0]);
@@ -315,7 +317,7 @@
       })
       .catch(error => {
         console.error('Erro:', error);
-        alert("Erro de conexão ao enviar o formulário. Verifique se as fotos não estão muito pesadas.");
+        alert("Erro de conexão ao enviar o formulário.");
         btn.innerText = "Enviar Dados Técnicos do Projeto";
         btn.disabled = false;
       });
